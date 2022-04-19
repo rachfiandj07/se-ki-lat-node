@@ -1,10 +1,21 @@
 const readline = require('readline');
+const vm = require('vm')
+const crypto = require('crypto')
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
     prompt: 'sql-lite-node> '
 });
+
+const Table = new Array()
+let Pages = class{
+    constructor(username, email) {
+        this.id = crypto.randomBytes(4).readUInt32BE(0, true),
+        this.username = username,
+        this.email = email
+    }
+}
 
 const StatementTypes = {
     SELECT: '.select',
